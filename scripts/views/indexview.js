@@ -1,4 +1,3 @@
-import Router from '../router';
 // import {UserCollection} from '../models/usermodel';
 
 export default Backbone.View.extend({
@@ -8,14 +7,13 @@ export default Backbone.View.extend({
   events: {
     'submit .loginform': 'login',
     'click .new-user-button': 'shownewform',
-    'submit .log-in-new': 'store'
+    'submit .new-user-form': 'store'
   },
 
   initialize: function() {
     this.render();
-    this.router = new Router();
-    this.listenTo(this.collection, 'add', function() {
-      this.router.navigate('blog', {trigger: true});
+    this.listenTo(this.collection, 'update', function() {
+      router.navigate('blog', {trigger: true});
     });
   },
 
@@ -26,10 +24,9 @@ export default Backbone.View.extend({
 
   login: function(e) {
     e.preventDefault();
-    console.log('hi');
     var userUsername = this.$('.login-username').val();
     if(this.collection.where({username: userUsername}) !== undefined) {
-      this.router.navigate('blog', {trigger: true});
+      router.navigate('blog', {trigger: true});
     } else {
       alert("This username does not exist! Please create one!");
     }
@@ -42,7 +39,8 @@ export default Backbone.View.extend({
 
   store: function(e) {
     e.preventDefault();
-      this.collection.create({
+    var currentCollection = this.collection;
+      currentCollection.create({
         firstname: this.$('.first-name').val(),
         lastname: this.$('.last-name').val(),
         username: this.$('.username').val(),
@@ -53,6 +51,5 @@ export default Backbone.View.extend({
         profilepicture: this.$('.profile-picture-url').val(),
         discription: this.$('.profile-description').val()
       });
-      this.router.navigate('blog', {trigger: true});
     }
 });

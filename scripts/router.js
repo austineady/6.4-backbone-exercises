@@ -14,7 +14,6 @@ var Router = Backbone.Router.extend({
 
   initialize: function() {
     this.users = new UserCollection();
-    console.log(this.users);
   },
 
   index: function() {
@@ -37,4 +36,5 @@ var Router = Backbone.Router.extend({
   }
 });
 
-export default new Router();
+// export an INSTANCE of the Router
+export default Router;
