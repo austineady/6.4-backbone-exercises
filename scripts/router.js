@@ -1,4 +1,5 @@
 import IndexView from './views/indexview';
+import BlogView from './views/blogview';
 
 import {UserCollection} from './models/usermodel';
 
@@ -12,15 +13,16 @@ var Router = Backbone.Router.extend({
   },
 
   initialize: function() {
-    //stuff
+    this.users = new UserCollection();
+    console.log(this.users);
   },
 
   index: function() {
-  this.showView(new IndexView({collection: UserCollection}));
+  this.showView(new IndexView({collection: this.users}));
   },
 
   blog: function() {
-
+  this.showView(new BlogView());
   },
 
   create: function() {
@@ -35,6 +37,4 @@ var Router = Backbone.Router.extend({
   }
 });
 
-var router = new Router();
-
-export default router;
+export default new Router();

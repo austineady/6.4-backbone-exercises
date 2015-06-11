@@ -16,9 +16,9 @@ var User = Backbone.Model.extend({
   }
 });
 
-var UserCollection = Backbone.Collection.extend ({
+var UserCollection = Backbone.Collection.extend({
   model: User,
-  url: 'http://tiny-lasagna-server.herokuapp.com/collections/ade/users'
+  url: 'http://tiny-lasagna-server.herokuapp.com/collections/adeusers'
 });
 
 export default {User, UserCollection};
