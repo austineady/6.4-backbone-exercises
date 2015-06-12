@@ -14,10 +14,15 @@ $very-light-gray: #fafafa;
 $base-font-color: $dark-gray;
 $base-background-color: $very-light-gray;
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: $base-font-family;
   background-color: $base-background-color;
   color: $base-font-color;
+  height: 100%;
 }
 
 li {
@@ -30,12 +35,10 @@ a {
 }
 
 .indexcontent {
-  @include outer-container(1500px);
+  @include outer-container(100vw);
   height: 100vw;
-  background-image: url('https://download.unsplash.com/photo-1429000263672-1b8b4008d2f7');
+  background: url('https://download.unsplash.com/photo-1429000263672-1b8b4008d2f7') no-repeat center center fixed;
   background-size: cover;
-  background-position: -100px -100px;
-  background-repeat: no-repeat;
 }
 
 .new-user-window {
@@ -43,7 +46,6 @@ a {
 }
 
 .blogwindow {
-  @include outer-container(100vw);
   height: 97vw;
   background-image: url('https://download.unsplash.com/photo-1429000263672-1b8b4008d2f7');
   background-size: cover;
@@ -89,12 +91,15 @@ a {
 }
 
 .indextitle {
-  @include span-columns(12);
   font-size: 90px;
   color: white;
   position: absolute;
-  top: 40%;
-  left: 40%;
+  top: 35%;
+  left: 39%;
+}
+
+::-webkit-input-placeholder {
+  color: white;
 }
 
 .login-username {
@@ -109,6 +114,7 @@ a {
   position: absolute;
   top: 60%;
   left: 42%;
+  text-align: center;
 }
 
 .authorized-login {
@@ -123,6 +129,11 @@ a {
   background-color: rgba(0, 0, 0, 0);
 }
 
+.authorized-login:hover {
+  background-color: rgba(255, 255, 255, .7);
+  color: rgba(239, 172, 120, 1);
+}
+
 .new-user-button {
   @include span-columns(2);
   border: 1px solid white;
@@ -133,6 +144,11 @@ a {
   top: 80%;
   left: 46%;
   background-color: rgba(0, 0, 0, 0);
+}
+
+.new-user-button:hover {
+  background-color: rgba(255, 255, 255, .7);
+  color: rgba(99, 145, 171, 1);
 }
 
 .new-user-form {
