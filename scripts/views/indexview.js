@@ -25,7 +25,8 @@ export default Backbone.View.extend({
   login: function(e) {
     e.preventDefault();
     var userUsername = this.$('.login-username').val();
-    if(this.collection.where({username: userUsername}) !== undefined) {
+    var that = this;
+    if(that.collection.where({username: userUsername}) !== undefined) {
       router.navigate('blog', {trigger: true});
     } else {
       alert("This username does not exist! Please create one!");

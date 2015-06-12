@@ -20,6 +20,24 @@ body {
   color: $base-font-color;
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.indexcontent {
+  @include outer-container(1500px);
+  height: 100vw;
+  background-image: url('https://download.unsplash.com/photo-1429000263672-1b8b4008d2f7');
+  background-size: cover;
+  background-position: -100px -100px;
+  background-repeat: no-repeat;
+}
+
 .new-user-window {
   display: none;
 }
@@ -31,18 +49,97 @@ body {
   margin: 0 auto;
 }
 
+.show-window {
+  @include outer-container(100vw);
+  height: 100vw;
+  background-color: rgba(0, 0, 0, .8)
+}
+
 .blogheader {
   @include span-columns(12);
   position: relative;
   top: 0;
   height: 100px;
-  background-color: rgba(255, 255, 255, .6);
+  background-color: rgba(0, 0, 0, .9);
 }
+
+.blogtitle {
+  @include span-columns(3);
+  @include shift(5);
+  font-size: 50px;
+  color: white;
+  margin-top: 15px;
+}
+
+.indextitle {
+  @include span-columns(12);
+  font-size: 90px;
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.login-username {
+  @include span-columns(3);
+  border: 1px solid rgba(255, 255, 255, 1);
+  height: 50px;
+  border-radius: 20px;
+  padding: 7px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  outline: none;
+  position: absolute;
+  top: 60%;
+  left: 42%;
+}
+
+.authorized-login {
+  @include span-columns(2);
+  border: 1px solid white;
+  height: 50px;
+  border-radius: 30px;
+  color: white;
+  position: absolute;
+  top: 70%;
+  left: 46%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.new-user-button {
+  @include span-columns(2);
+  border: 1px solid white;
+  height: 50px;
+  border-radius: 30px;
+  color: white;
+  position: absolute;
+  top: 80%;
+  left: 46%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* .showheader {
+  @include span-columns(12);
+  position: relative;
+  top: 0;
+  height: 100px;
+  background-color: rgba(255, 255, 255, .6);
+} */
 
 .postbox {
   @include span-columns(5.8);
   @include shift(.1);
   height: 90vw;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 5px;
+  float: left;
+}
+
+.showbox {
+  @include span-columns(11.8);
+  @include shift(.1);
+  height: auto;
   margin-top: 10px;
   background-color: white;
   border-radius: 5px;
@@ -55,6 +152,7 @@ body {
   background-color: white;
   border-radius: 5px;
   text-align: center;
+  display: block;
 }
 
 .popularbox {
@@ -64,6 +162,7 @@ body {
   background-color: white;
   border-radius: 5px;
   text-align: center;
+  display: block;
 }
 
 .new-post {
@@ -74,4 +173,122 @@ body {
   margin-top: 25px;
   float: right;
   background-color: rgba(255, 255, 255, 1);
+}
+
+.post {
+  @include span-columns(12);
+}
+
+.post-picture {
+  @include span-columns(10);
+  @include shift(1);
+  height: auto;
+  margin-top: 10px;
+}
+
+.post-title {
+  @include span-columns(10);
+  @include shift(1);
+  text-align: center;
+}
+
+.show-title {
+  @include span-columns(10);
+  @include shift(1);
+  text-align: center;
+  position: absolute;
+  color: white;
+  font-size: 40px;
+  top: 45%;
+}
+
+.post-date {
+  @include span-columns(10);
+  @include shift(1);
+}
+
+.show-date {
+  @include span-columns(10);
+  @include shift(1);
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.content {
+  @include span-columns(10);
+  @include shift(1);
+  height: 55px;
+  overflow: hidden;
+  box-shadow: inset 0 -5px 5px rgba(0, 0, 0, .1);
+  border-radius: 5px;
+}
+
+.showcontent {
+  @include span-columns(10);
+  @include shift(1);
+  height: auto;
+  font-size: 20px;
+}
+
+.create-post {
+  @include span-columns(5.7);
+  @include shift(.1);
+  height: 90vw;
+  background-color: rgba(255, 255, 255, 1);
+  margin-top: 10px;
+  border-radius: 5px;
+  display: none;
+  float: left;
+}
+
+.title-input {
+  @include span-columns(10);
+  @include shift(1);
+  margin-top: 20px;
+  height: 50px;
+  border: 1px solid silver;
+  border-radius: 10px;
+  outline: none;
+  font-size: 25px;
+  padding: 7px;
+}
+
+.content-input {
+  @include span-columns(10);
+  @include shift(1);
+  border: 1px solid silver;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  font-size: 20px;
+  height: 70vw;
+  margin-top: 20px;
+}
+
+.new-post-picture {
+  @include span-columns(10);
+  @include shift(1);
+  height: 50px;
+  border: 1px solid silver;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  outline: none;
+}
+
+.new-post-submit {
+  @include span-columns(2);
+  @include shift(5);
+  height: 50px;
+  border: 1px solid gray;
+  background-color: rgba(255, 255, 255, 1);
+  color: gray;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+.new-post-submit:hover {
+  background-color: gray;
+  color: white;
 }
