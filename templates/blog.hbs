@@ -4,32 +4,40 @@
     <button class="new-post">New Post</button>
     <span class="bloguser">{{username}}</span>
   </header>
-  <form class="create-post">
-    <input type="text" class="title-input" placeholder="Title">
-    <textarea class="content-input" placeholder="Type Here"></textarea>
-    <input type="url" class="new-post-picture" placeholder="Picture URL">
-    <input type="submit" class="new-post-submit" value="Publish">
-  </form>
-  <div class="postbox">
-  {{#each this}}
-    <a href="/#blog/{{_id}}"<li class="post">
-      <img src="{{picture}}" class="post-picture" height="100px" width="200px">
-      <h2 class="post-title">{{title}}</h2>
-      <span class="post-date">{{created_at}}</span>
-      <p class="content">{{content}}</p>
-    </li></a>
-  {{/each}}
-  </div>
-  <div class="trendingbox">
-    <h2 class="trendingtext">TRENDING</h2>
-    <div class="trendingpics">
+  <section class="blogcontent">
+    <form class="create-post">
+      <input type="text" class="title-input" placeholder="Title">
+      <textarea class="content-input" placeholder="Type Here"></textarea>
+      <input type="url" class="new-post-picture" placeholder="Picture URL">
+      <input type="submit" class="new-post-submit" value="Publish">
+    </form>
+    <div class="postbox">
     {{#each this}}
-      <span class="tags">{{tags}}</span>
+      <a href="/#blog/{{_id}}"<li class="post">
+        <img src="{{picture}}" class="post-picture" height="100px" width="200px">
+        <h2 class="post-title">{{title}}</h2>
+        <span class="post-date">{{created_at}}</span>
+        <p class="content">{{content}}</p>
+      </li></a>
     {{/each}}
     </div>
-  </div>
-  <div class="popularbox">
-    <h2 class="populartext">POPULAR</h2>
-    <div class="popularposts"></div>
-  </div>
+    <div class="trendingbox">
+      <h2 class="trendingtext">CATEGORIES</h2>
+      <div class="trendingpics">
+      <!--{{#each this}}
+        <span class="tags">{{tags}}</span>
+      {{/each}} -->
+        <div class="category movie">Movies</div>
+        <div class="category life">Life</div>
+        <div class="category sports">Sports</div>
+        <div class="category books">Books</div>
+        <div class="category games">Games</div>
+        <div class="category fitness">Fitness</div>
+      </div>
+    </div>
+    <div class="popularbox">
+      <h2 class="populartext">POPULAR</h2>
+      <div class="popularposts"></div>
+    </div>
+  </section>
 </section>
