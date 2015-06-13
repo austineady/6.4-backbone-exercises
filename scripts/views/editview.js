@@ -22,6 +22,7 @@ export default Backbone.View.extend({
       tags: this.$('.tagselection').val()
     });
     this.model.save();
+    router.navigate('blog', {trigger: true});
   },
 
   delete: function() {
