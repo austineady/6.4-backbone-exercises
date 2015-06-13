@@ -99,7 +99,7 @@ a {
   color: white;
   position: absolute;
   top: 35%;
-  left: 39%;
+  left: 37%;
 }
 
 ::-webkit-input-placeholder {
@@ -117,7 +117,7 @@ a {
   outline: none;
   position: absolute;
   top: 60%;
-  left: 42%;
+  left: 40%;
   text-align: center;
 }
 
@@ -129,7 +129,7 @@ a {
   color: white;
   position: absolute;
   top: 70%;
-  left: 46%;
+  left: 44%;
   background-color: rgba(0, 0, 0, 0);
 }
 
@@ -146,7 +146,7 @@ a {
   color: white;
   position: absolute;
   top: 80%;
-  left: 46%;
+  left: 44%;
   background-color: rgba(0, 0, 0, 0);
 }
 
@@ -323,7 +323,7 @@ a {
   @include omega();
   margin-top: 10px;
   height: auto;
-  background-color: white;
+  background-color: rgba(250, 250, 250, 1);
   border-radius: 5px;
   text-align: center;
   display: block;
@@ -381,7 +381,7 @@ a {
   @include omega();
   margin-top: 5px;
   height: 30vw;
-  background-color: white;
+  background-color: rgba(250, 250, 250, 1);
   border-radius: 5px;
   text-align: center;
   display: block;
@@ -402,6 +402,12 @@ a {
 .new-post:hover {
   background-color: white;
   color: rgba(204, 148, 111, 1);
+}
+
+.continuetext {
+  @include span-columns(3);
+  @include shift(1);
+  color: green;
 }
 
 .post {

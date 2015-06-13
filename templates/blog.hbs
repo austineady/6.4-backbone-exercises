@@ -24,11 +24,12 @@
     </form>
     <div class="postbox">
     {{#each this}}
-      <a href="/#blog/{{_id}}"<li class="post">
+      <a href="/#blog/{{_id}}"><li class="post">
         <div class="picturebox" background="{{picture}}"><img src="{{picture}}" class="post-picture" height="100px" width="200px"></div>
         <h2 class="post-title">{{title}}</h2>
         <span class="post-date">{{created_at}}</span>
         <p class="content">{{content}}</p>
+        <a href="/#blog/{{_id}}"><span class="continuetext">Continue Reading...</span></a>
       </li></a>
     {{/each}}
     </div>
