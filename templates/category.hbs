@@ -1,0 +1,19 @@
+<section class="categorywindow">
+  <header class="blogheader">
+    <span class="blogtitle"><i class="fa fa-inbox"></i>PostBox</span>
+    <button class="new-post">New Post</button>
+    <span class="bloguser">{{username}}</span>
+  </header>
+  <section class="show-content">
+    <div class="showbox">
+      {{#each this}}
+      <a href="/#blog/{{_id}}"<li class="post">
+        <div class="picturebox"><img src="{{attributes.picture}}" class="post-picture" height="100px" width="200px"></div>
+        <h2 class="post-title">{{attributes.title}}</h2>
+        <span class="post-date">{{attributes.created_at}}</span>
+        <p class="content">{{attributes.content}}</p>
+      </li></a>
+      {{/each}}
+    </div>
+  </section>
+</section>

@@ -9,12 +9,23 @@
       <input type="text" class="title-input" placeholder="Title">
       <textarea class="content-input" placeholder="Type Here"></textarea>
       <input type="url" class="new-post-picture" placeholder="Picture URL">
+      <div class="selecttagbox">
+        <select class="tagselection">
+          <option value="Instruction">Select a Tag</option>
+          <option value="Movies">Movies</option>
+          <option value="Life">Life</option>
+          <option value="Sports">Sports</option>
+          <option value="Books">Books</option>
+          <option value="Games">Games</option>
+          <option value="Fitness">Fitness</option>
+        </select>
+      </div>
       <input type="submit" class="new-post-submit" value="Publish">
     </form>
     <div class="postbox">
     {{#each this}}
       <a href="/#blog/{{_id}}"<li class="post">
-        <img src="{{picture}}" class="post-picture" height="100px" width="200px">
+        <div class="picturebox" background="{{picture}}"><img src="{{picture}}" class="post-picture" height="100px" width="200px"></div>
         <h2 class="post-title">{{title}}</h2>
         <span class="post-date">{{created_at}}</span>
         <p class="content">{{content}}</p>
@@ -27,12 +38,12 @@
       <!--{{#each this}}
         <span class="tags">{{tags}}</span>
       {{/each}} -->
-        <div class="category movie">Movies</div>
-        <div class="category life">Life</div>
-        <div class="category sports">Sports</div>
-        <div class="category books">Books</div>
-        <div class="category games">Games</div>
-        <div class="category fitness">Fitness</div>
+        <a href="/#blog/category/Movies"><div class="category movie">Movies</div></a>
+        <a href="/#blog/category/Life"><div class="category life">Life</div>
+        <a href="/#blog/category/Sports"><div class="category sports">Sports</div>
+        <a href="/#blog/category/Books"><div class="category books">Books</div>
+        <a href="/#blog/category/Games"><div class="category games">Games</div>
+        <a href="/#blog/category/Fitness"><div class="category fitness">Fitness</div>
       </div>
     </div>
     <div class="popularbox">

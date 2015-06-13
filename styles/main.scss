@@ -14,6 +14,10 @@ $very-light-gray: #fafafa;
 $base-font-color: $dark-gray;
 $base-background-color: $very-light-gray;
 
+* {
+  outline: none;
+}
+
 html {
   height: 100%;
 }
@@ -99,7 +103,7 @@ a {
 }
 
 ::-webkit-input-placeholder {
-  color: white;
+  color: silver;
 }
 
 .login-username {
@@ -300,6 +304,7 @@ a {
   margin-top: 10px;
   background-color: white;
   border-radius: 5px;
+  padding-top: 10px;
   float: left;
   overflow-y: scroll;
 }
@@ -391,6 +396,7 @@ a {
   color: white;
   float: right;
   background-color: rgba(0, 0, 0, 0);
+  outline: none;
 }
 
 .new-post:hover {
@@ -402,12 +408,24 @@ a {
   @include span-columns(12);
 }
 
-.post-picture {
+.picturebox {
   @include span-columns(10);
   @include shift(1);
-  height: 250px;
+  height: 200px;
   overflow: hidden;
   margin-top: 10px;
+  border-radius: 5px;
+}
+
+.picturebox:hover {
+  height: 250px;
+  transition: 3s;
+}
+
+.post-picture {
+  @include span-columns(12);
+  height: auto;
+  border-radius: 5px;
 }
 
 .post-title {
@@ -458,7 +476,7 @@ a {
   @include span-columns(4.8);
   @include shift(.1);
   @include omega();
-  height: 90vw;
+  height: auto;
   background-color: rgba(255, 255, 255, 1);
   margin-top: 10px;
   border-radius: 5px;
@@ -466,9 +484,30 @@ a {
   float: left;
 }
 
+.edit-post{
+  @include span-columns(8);
+  @include shift(2);
+  height: auto;
+  background-color: rgba(255, 255, 255, .6);
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
 .title-input {
   @include span-columns(10);
   @include shift(1);
+  margin-top: 20px;
+  height: 50px;
+  border: 1px solid silver;
+  border-radius: 10px;
+  outline: none;
+  font-size: 25px;
+  padding: 7px;
+}
+
+.edit-title-input {
+  @include span-columns(8);
+  @include shift(2);
   margin-top: 20px;
   height: 50px;
   border: 1px solid silver;
@@ -486,7 +525,19 @@ a {
   padding: 10px;
   outline: none;
   font-size: 20px;
-  height: 70vw;
+  height: 60vw;
+  margin-top: 20px;
+}
+
+.edit-content-input {
+  @include span-columns(8);
+  @include shift(2);
+  border: 1px solid silver;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  font-size: 20px;
+  height: 50vw;
   margin-top: 20px;
 }
 
@@ -502,6 +553,27 @@ a {
   outline: none;
 }
 
+.edit-post-picture {
+  @include span-columns(8);
+  @include shift(2);
+  height: 50px;
+  border: 1px solid silver;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  outline: none;
+}
+
+.tagselection {
+  @include span-columns(6);
+  @include shift(3);
+  height: 50px;
+  border: 1px solid silver;
+  outline: none;
+  margin-top: 20px;
+}
+
 .new-post-submit {
   @include span-columns(2);
   @include shift(5);
@@ -511,9 +583,47 @@ a {
   color: gray;
   border-radius: 20px;
   margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.edit-save {
+  @include span-columns(2);
+  @include shift(5);
+  height: 50px;
+  border: 1px solid gray;
+  background-color: rgba(255, 255, 255, 1);
+  color: gray;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.edit-delete {
+  @include span-columns(2);
+  @include shift(5);
+  height: 50px;
+  border: 1px solid gray;
+  background-color: rgba(255, 255, 255, 1);
+  color: maroon;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.edit-delete:hover {
+  background-color: maroon;
+  border: 1px solid maroon;
+  color: white;
+}
+
+.edit-save:hover {
+  border: 1px solid green;
+  background-color: green;
+  color: white;
 }
 
 .new-post-submit:hover {
-  background-color: gray;
+  border: 1px solid green;
+  background-color: green;
   color: white;
 }

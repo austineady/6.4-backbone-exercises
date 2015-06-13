@@ -1,6 +1,8 @@
 import IndexView from './views/indexview';
 import BlogView from './views/blogview';
 import ShowView from './views/showview';
+import CategoryView from './views/categoryview';
+import EditView from './views/editview';
 
 import {UserCollection} from './models/usermodel';
 import {BlogCollection} from './models/blogmodel';
@@ -11,7 +13,8 @@ var Router = Backbone.Router.extend({
     '': 'index',
     'blog': 'blog',
     'blog/:id': 'showpost',
-    'create': 'create'
+    'blog/category/:tag': 'category',
+    'blog/edit/:id': 'edit'
   },
 
   initialize: function() {
@@ -34,6 +37,23 @@ var Router = Backbone.Router.extend({
       console.log(this.blogs.get(id));
       var blog = this.blogs.get(id);
       this.showView(new ShowView({model: blog}));
+    }.bind(this));
+  },
+
+  category: function(tag) {
+    var that = this;
+    that.blogs.fetch().then(function() {
+      var tagArray = that.blogs.where({tags: tag});
+      console.log(tagArray);
+      that.showView(new CategoryView({collection: tagArray}));
+    });
+  },
+
+  edit: function(id) {
+    console.log(id);
+    this.blogs.fetch().then(function() {
+      var blogEdit = this.blogs.get(id);
+      this.showView(new EditView({model: blogEdit}));
     }.bind(this));
   },
 

@@ -1,3 +1,5 @@
+import {UserCollection} from '../models/usermodel';
+
 export default Backbone.View.extend({
 
   template: JST.blog,
@@ -6,9 +8,12 @@ export default Backbone.View.extend({
     'click .new-post': 'create',
     'submit .create-post': 'store',
     'click .post': 'showid'
+    // <!--  -->'click .category': 'navigatecategory'
   },
 
   initialize: function() {
+    this.users = new UserCollection();
+    console.log(this.users);
     this.render();
     this.listenTo(this.collection, 'update', this.render);
   },
@@ -24,6 +29,10 @@ export default Backbone.View.extend({
     this.$('.create-post').css('display', 'block');
   },
 
+  navigatecategory: function(e) {
+    var categorySelected = ($(e.target).text());
+  },
+
   store: function(e) {
     e.preventDefault();
     var newCollection = this.collection;
@@ -31,6 +40,7 @@ export default Backbone.View.extend({
       title: this.$('.title-input').val(),
       content: this.$('.content-input').val(),
       picture: this.$('.new-post-picture').val(),
+      tags: this.$('.tagselection').val(),
     });
   }
 });
