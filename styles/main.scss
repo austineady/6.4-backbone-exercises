@@ -50,32 +50,27 @@ a {
 }
 
 .blogwindow {
+  @include outer-container(100vw);
   height: 97vw;
-  background-image: url('https://download.unsplash.com/photo-1429000263672-1b8b4008d2f7');
-  background-size: cover;
-  background-position: -100px -100px;
 }
 
 
 .blogcontent {
   @include span-columns(12);
   height: 90vw;
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(192, 210, 214, .5);
   margin: 0 auto;
 }
 
 .show-window {
   @include outer-container(100vw);
   height: 97vw;
-  background-image: url('https://download.unsplash.com/photo-1429000263672-1b8b4008d2f7');
-  background-size: cover;
-  background-position: -100px -100px;
 }
 
 .show-content {
   @include span-columns(12);
   height: 90vw;
-  background-color: rgba(0, 0, 0, .8)
+  background-color: rgba(192, 210, 214, .5);
 }
 
 .blogheader {
@@ -83,15 +78,17 @@ a {
   position: relative;
   top: 0;
   height: 100px;
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(127, 202, 144, 1);
+;
 }
 
 .blogtitle {
-  @include span-columns(3);
-  @include shift(5);
+  @include span-columns(7);
+  @include shift(3);
   font-size: 50px;
   color: white;
   margin-top: 15px;
+  text-align: center;
 }
 
 .indextitle {
@@ -401,7 +398,7 @@ a {
 
 .new-post:hover {
   background-color: white;
-  color: rgba(204, 148, 111, 1);
+  color: rgba(127, 202, 144, 1);
 }
 
 .continuetext {
@@ -476,6 +473,37 @@ a {
   @include shift(1);
   height: auto;
   font-size: 20px;
+}
+
+.edit-current-post {
+  @include span-columns(2);
+  @include shift(5);
+  height: 50px;
+  border: 1px solid rgba(127, 202, 144, 1);
+  color: rgba(127, 202, 144, 1);
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 25px;
+  margin-bottom: 10px;
+}
+
+.edit-current-post:hover {
+  background-color: rgba(127, 202, 144, 1);
+  color: white;
+}
+
+.show-go-back {
+  @include span-columns(2);
+  @include shift(5);
+  height: 50px;
+  border: 1px solid rgba(30, 172, 242, 1);
+  background-color: white;
+  color: rgba(30, 172, 242, 1);
+  border-radius: 25px;
+}
+
+.show-go-back:hover {
+  background-color: rgba(30, 172, 242, 1);
+  color: white;
 }
 
 .create-post {
